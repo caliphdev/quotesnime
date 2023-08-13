@@ -18,7 +18,7 @@ Anda dapat melihat demo live dari website ini [di sini](https://caliphdev.github
 
 ## Teknologi
 
-- HTML, CSS (Tailwind CSS, Bootstrap)
+- HTML, CSS (Tailwind CSS)
 - JavaScript (Fetch API)
 - Share API untuk berbagi kutipan
 
