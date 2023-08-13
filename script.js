@@ -1,6 +1,8 @@
 async function fetchQuoteData() {
     document.getElementById('quote-card').classList.add('hidden');
     document.getElementById('loadingCard').classList.remove('hidden');
+    document.getElementById('copyQuote').innerHTML = '<i class="fas fa-copy"></i> Copy';
+    document.getElementById('copyQuote').disabled = false;
 
     try {
         const response = await fetch('https://qts-api.caliph.workers.dev/api/generate/quotes-anime');
@@ -60,4 +62,14 @@ document.getElementById('shareQuote').addEventListener('click', async () => {
     } catch (error) {
         console.error('Share API error:', error);
     }
+});
+
+document.getElementById('copyQuote').addEventListener('click', () => {
+    const charName = document.getElementById('charName').textContent;
+    const quote = document.getElementById('quote').textContent;
+    const anime = document.getElementById('anime').textContent;	
+    navigator.clipboard.writeText(`${quote}\n\n- ${charName}\n${anime}`);
+    document.getElementById('copyQuote').textContent = 'Copied!';
+    document.getElementById('copyQuote').disabled = true;
+
 });

@@ -1,6 +1,18 @@
+/* Background animated loop */
 body {
-  background-color: #f7fafc;
+  background: #f3f3f3;
+  background-image: linear-gradient(315deg, #f3f3f3 0%, #e7e7e7 74%);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
 }
+/* Typography */
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  color: #2d3748;
+}
+
 .quote-container {
   max-width: 500px;
   margin: 0 auto;
@@ -22,14 +34,6 @@ body {
 .btn-primary:hover {
   background-color: #5a67d8;
   border-color: #5a67d8;
-}
-.btn-secondary {
-  background-color: #e2e8f0;
-  border-color: #e2e8f0;
-}
-.btn-secondary:hover {
-  background-color: #cbd5e1;
-  border-color: #cbd5e1;
 }
 .icon {
   font-size: 1.25rem;
