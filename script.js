@@ -1,8 +1,14 @@
 async function fetchQuoteData() {
-    document.getElementById('quote-card').classList.add('hidden');
-    document.getElementById('loadingCard').classList.remove('hidden');
-    document.getElementById('copyQuote').innerHTML = '<i class="fas fa-copy"></i> Copy';
-    document.getElementById('copyQuote').disabled = false;
+    const quoteCard = document.getElementById('quote-card');
+    const loadingCard = document.getElementById('loadingCard');
+    const copyQuoteButton = document.getElementById('copyQuote');
+    const errorCard = document.getElementById('errorCard');
+
+    quoteCard.classList.add('d-none');
+    loadingCard.classList.remove('d-none');
+    copyQuoteButton.innerHTML = '<i class="fas fa-copy"></i> Copy';
+    copyQuoteButton.disabled = false;
+    errorCard.classList.add('d-none');
 
     try {
         const response = await fetch('https://qts-api.caliph.workers.dev/api/generate/quotes-anime');
@@ -14,7 +20,7 @@ async function fetchQuoteData() {
         imageLoader.style.display = 'block';
 
         const img = new Image();
-        img.src = quote.img;
+        img.src = `https://i0.wp.com/${quote.img.replace('https://', '')}`;
         img.onload = () => {
             charImage.src = quote.img;
             charImage.style.display = 'block';
@@ -32,20 +38,22 @@ async function fetchQuoteData() {
         document.getElementById('anime').textContent = `Anime: ${quote.anime}`;
         document.getElementById('episode').textContent = `Episode: ${quote.episode}`;
         document.getElementById('date').textContent = `Date: ${quote.date}`;
+        quoteCard.classList.remove('d-none');
     
     } catch (error) {
-        console.error('Error fetching data:', error);
+        console.error(error);
+        errorCard.classList.remove('d-none');
     } finally {
-        document.getElementById('loadingCard').classList.add('hidden');
-        document.getElementById('quote-card').classList.remove('hidden');
+        loadingCard.classList.add('d-none');
     }
 }
 
 document.getElementById('newQuote').addEventListener('click', () => {
     fetchQuoteData();
-    document.getElementById('quote-card').classList.add('animate__animated', 'animate__bounce');
+    const quoteCard = document.getElementById('quote-card');
+    quoteCard.classList.add('animate__animated', 'animate__bounce');
     setTimeout(() => {
-        document.getElementById('quote-card').classList.remove('animate__bounce');
+        quoteCard.classList.remove('animate__bounce');
     }, 500);
 });
 
@@ -69,7 +77,7 @@ document.getElementById('copyQuote').addEventListener('click', () => {
     const quote = document.getElementById('quote').textContent;
     const anime = document.getElementById('anime').textContent;	
     navigator.clipboard.writeText(`${quote}\n\n- ${charName}\n${anime}`);
-    document.getElementById('copyQuote').textContent = 'Copied!';
-    document.getElementById('copyQuote').disabled = true;
-
+    const copyQuoteButton = document.getElementById('copyQuote');
+    copyQuoteButton.textContent = 'Copied!';
+    copyQuoteButton.disabled = true;
 });

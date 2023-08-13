@@ -63,3 +63,11 @@ footer {
   text-align: center;
   color: #718096;
 }
+
+hidden {
+  display: none;
+}
+
+.d-none {
+  display: none;
+}
