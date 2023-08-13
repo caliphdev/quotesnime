@@ -33,12 +33,13 @@
                     <button class="bg-green-500 hover:bg-green-700 text-white py-2 px-4 rounded" id="copyQuote">
                         <span class="icon"><i class="fas fa-copy"></i></span>
                         <span class="ml-2">Salin</span>
+                    </button>
                 </div>
-            </div>
             <div class="quote-card p-4 text-center d-none" id="loadingCard">
                 <div class="loader mx-auto"></div>
                 <p class="text-gray-600 mt-4 italic text-lg font-semibold">Mencari kutipan...</p>
             </div>
+
             <div class="quote-card p-4 text-center d-none" id="errorCard">
                 <p class="text-gray-600 mt-4 italic text-lg font-semibold">Terjadi kesalahan saat mengambil kutipan.</p>
                 <button class="bg-red-500 hover:bg-red-700 text-white py-2 px-4 rounded mt-4" id="retryQuote" onclick="fetchQuoteData()">
@@ -47,9 +48,10 @@
                 </button>
         </div>
     </div>
-
+    </div>
+    </div>
     <footer>
-        Dibuat dengan ❤️ oleh <a href="https://m.caliph.my.id" target="_blank">Caliph</a>
+        Dibuat dengan ❤️ oleh <a href="https://m.caliph.my.id" target="_blank" class="text-blue-500 hover:text-blue-700">Caliph</a>
     </footer>
 
     <script src="./script.js"></script>
