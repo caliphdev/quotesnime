@@ -7,8 +7,13 @@ body {
   background-attachment: fixed;
 }
 /* Typography */
-h1, h2, h3, h4, h5, h6 {
-  font-family: 'Poppins', sans-serif;
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Poppins", sans-serif;
   font-weight: 600;
   color: #2d3748;
 }
@@ -48,15 +53,24 @@ h1, h2, h3, h4, h5, h6 {
   margin: 0 auto;
 }
 @keyframes spin {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }
 .animate-bounce {
   animation: bounce 0.5s infinite;
 }
 @keyframes bounce {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-10px); }
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
 }
 footer {
   margin-top: 2rem;
