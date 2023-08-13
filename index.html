@@ -35,19 +35,20 @@
                         <span class="ml-2">Salin</span>
                     </button>
                 </div>
-            <div class="quote-card p-4 text-center d-none" id="loadingCard">
-                <div class="loader mx-auto"></div>
-                <p class="text-gray-600 mt-4 italic text-lg font-semibold">Mencari kutipan...</p>
-            </div>
-
-            <div class="quote-card p-4 text-center d-none" id="errorCard">
-                <p class="text-gray-600 mt-4 italic text-lg font-semibold">Terjadi kesalahan saat mengambil kutipan.</p>
-                <button class="bg-red-500 hover:bg-red-700 text-white py-2 px-4 rounded mt-4" id="retryQuote" onclick="fetchQuoteData()">
-                    <span class="icon"><i class="fas fa-redo"></i></span>
-                    <span class="ml-2">Coba Lagi</span>
-                </button>
-        </div>
+           
     </div>
+    <div class="quote-card p-4 text-center d-none" id="loadingCard">
+        <div class="loader mx-auto"></div>
+        <p class="text-gray-600 mt-4 italic text-lg font-semibold">Mencari kutipan...</p>
+    </div>
+
+    <div class="quote-card p-4 text-center d-none" id="errorCard">
+        <p class="text-gray-600 mt-4 italic text-lg font-semibold">Terjadi kesalahan saat mengambil kutipan.</p>
+        <button class="bg-red-500 hover:bg-red-700 text-white py-2 px-4 rounded mt-4" id="retryQuote" onclick="fetchQuoteData()">
+            <span class="icon"><i class="fas fa-redo"></i></span>
+            <span class="ml-2">Coba Lagi</span>
+        </button>
+</div>
     </div>
     </div>
     <footer>
@@ -55,5 +56,30 @@
     </footer>
 
     <script src="./script.js"></script>
+   <!-- <script>
+        // anti inspect element
+        document.onkeydown = function(e) {
+            if(event.keyCode == 123) {
+                return false;
+            }
+            if(e.ctrlKey && e.shiftKey && e.keyCode == 'I'.charCodeAt(0)) {
+                return false;
+            }
+            if(e.ctrlKey && e.shiftKey && e.keyCode == 'C'.charCodeAt(0)) {
+                return false;
+            }
+            if(e.ctrlKey && e.shiftKey && e.keyCode == 'J'.charCodeAt(0)) {
+                return false;
+            }
+            if(e.ctrlKey && e.keyCode == 'U'.charCodeAt(0)) {
+                return false;
+            }
+        }
+
+        // anti right click
+        document.addEventListener('contextmenu', function(e) {
+            e.preventDefault();
+        }, false);
+    </script> -->
 </body>
 </html>
